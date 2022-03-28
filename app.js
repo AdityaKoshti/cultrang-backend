@@ -1,34 +1,32 @@
-
-var express = require('express');
 var createErrors = require('http-errors');
+var express = require('express');
+
 
 var app = express();
+
+
+var index = require('./routes/index');
+var users = require('./routes/users');
+var compsRegistration = require('./routes/compsRegistration');
+var eventsRegistration = require('./routes/eventsRegistration');
+
 
 app.set('view engine', 'ejs');
 
 
-app.get("/", function(req, res){
-    res.send("<h1> Hello World</h1>");
-});
-
-app.get("/users", function(req, res, next){
-    res.send("<h1> This is the users page</h1>");
-});
-
-app.get("/comps", function(req, res, next){
-    res.send("<h1> This is the comps page</h1>");
-});
-
-app.get("/events", function(req, res, next){
-    res.send("<h1> This is the events page</h1>");
-});
-
-app.use(function(req, res, next){
-    next(createErrors(404));
-});
+app.use('/' , index);
+app.use('/users', users);
+app.use('/comps', compsRegistration);
+app.use('/events', eventsRegistration);
 
 
 app.use(function(err, req, res, next){
+    console.log(err);
+    next(createErrors(404));
+});
+
+app.use(function(err, req, res, next){
+    console.log(err);
     res.render('error', {error: err.status});
 });
 

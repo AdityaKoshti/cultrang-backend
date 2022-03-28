@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
-// Home page 
+// Events Registration page 
 router.get("/", function(req, res, next){
-    res.render('index');
+    res.send('Events Registration');
 });
 
 
