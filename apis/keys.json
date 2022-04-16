@@ -1,0 +1,7 @@
+{
+    "mail": {
+        "userid": "your email id",
+        "pass": "your pass word"
+    },
+    "mongoURI": "mongodb+srv://<username>:<password>@cluster0.wetmb.mongodb.net/cultrangDB"
+}

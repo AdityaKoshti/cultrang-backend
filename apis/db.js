@@ -1,10 +1,19 @@
 var mongoose = require('mongoose');
+var keys = require("./keys.json");
 
-mongoose.connect(mongoose.connect('mongodb://localhost:27017/myapp'));
+// Change the password that is here
 
-const userSchema = {
-    name: String,
-    email: String
-}
-
-const 
+module.exports = async () => {
+    try{
+        mongoose.connect(keys.mongoURI,
+            {
+                useNewUrlParser: true,
+                useUnifiedTopology: true
+            });
+            console.log("Successfully Connected to Database");
+    }
+    catch(err){
+        console.error("Failed to Connect to Database");
+        process.exit(1);
+    }   
+};

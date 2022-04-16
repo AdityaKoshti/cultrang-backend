@@ -6,12 +6,24 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Aditya Koshti",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.2",
     "ejs": "^3.1.6",
     "express": "^4.17.3",
-    "http-errors": "^2.0.0"
-  }
+    "http-errors": "^2.0.0",
+    "mongoose": "^6.2.9",
+    "nodemailer": "^6.7.3",
+    "nodemon": "^2.0.15"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AdityaKoshti/cultrang-backend.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/AdityaKoshti/cultrang-backend/issues"
+  },
+  "homepage": "https://github.com/AdityaKoshti/cultrang-backend#readme"
 }
